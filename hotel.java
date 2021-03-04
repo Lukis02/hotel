@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLOutput;
 import java.util.Date;
 import java.util.Scanner;
@@ -31,12 +33,54 @@ public class hotel extends JFrame {
         p2.setLayout(new GridLayout(1,2));
         JPanel p3 = new JPanel();
         p3.setLayout(new GridLayout(4,2));
+        doble = new JCheckBox("Marque si el cliente desea una habitación doble");
+        p3.add(doble);
+        p2.add(p3);
+        suite = new JCheckBox("Marque si el cliente desea una suite");
+        Entrada = new DateChooserCombo();
+        Salida = new DateChooserCombo();
+        p2.add(Entrada, Salida);
+        aceptar = new JButton("confirmar");
+        reiniciar = new JButton ("reiniciar");
+        p1.add(p2);
+        add(p1);
+        setSize(800, 600);
+        setVisible(true);
 
+    }
 
+    public static void main(String[] args) { hotel ht = new hotel(); }
+    private class doble implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (doble.isSelected() == true) {
 
+            }
         }
+    private class suite implements ActionListener{
+            @Override
+        public void actionPerformed (ActionEvent e) {
+                if(suite.isSelected() == true) {
 
-    public static void main(String[] args) {
+                }
+            }
+    private class aceptar implements ActionListener{
+                @Override
+        public void actionPerformed (ActionEvent e ) {
+                if(aceptar.isSelected() == true){
+
+                }
+    }
+    private class reiniciar implements ActionListener{
+                @Override
+        public void actionPerformed (ActionEvent e) {
+                if(reiniciar.isSelected() == true){
+
+                }
+                }
+                }
+    }
+    }
     }
 
 
